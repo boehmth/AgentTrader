@@ -1,2 +1,3 @@
 run_date,model,prompt_version,days,start_date,end_date,start_total,end_total,pnl_abs,pnl_pct,trades,audit_ok,error
 2026-07-15,gemini-flash-latest,v6,5,2026-07-09,2026-07-15,10000.0,10096.800354003906,96.80035400390625,0.9680035400390625,1,True,
+2026-07-15,gemini-flash-latest,v6,5,2026-07-09,2026-07-15,10000.0,10000.0,0.0,0.0,0,True,
