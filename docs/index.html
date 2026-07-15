@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="de">
+<head><meta charset="utf-8"><title>AgentTrader — Benchmark</title>
+    <style>
+      body { font-family: system-ui, sans-serif; max-width: 1100px; margin: 2em auto; padding: 0 1em; }
+      h1, h2 { border-bottom: 1px solid #eee; padding-bottom: 0.3em; }
+      table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+      th, td { border: 1px solid #ddd; padding: 0.4em 0.6em; text-align: right; }
+      th { background: #f6f6f6; text-align: left; }
+      td:first-child, th:first-child { text-align: left; }
+      tr:nth-child(even) { background: #fafafa; }
+      .pos { color: #2b8a3e; font-weight: 600; }
+      .neg { color: #c92a2a; font-weight: 600; }
+      img { max-width: 100%; height: auto; margin: 1em 0; }
+      code { background: #f4f4f4; padding: 0.1em 0.3em; border-radius: 3px; }
+    </style>
+    </head>
+<body>
+  <h1>AgentTrader — täglicher Modell-Benchmark</h1>
+  <p>
+    Automatisch generiert aus <code>data/leaderboard.csv</code>.
+    Insgesamt 1 Läufe, 1 Modelle,
+    Zeitraum 2026-07-15 bis 2026-07-15.
+  </p>
+
+  <h2>Letzter Lauf (2026-07-15)</h2>
+  <table>
+    <thead><tr>
+      <th>Modell</th><th>Prompt</th><th>Trades</th>
+      <th>Start</th><th>Ende</th><th>P&L %</th><th>Audit</th>
+    </tr></thead>
+    <tbody><tr><td>gemini-flash-latest</td><td>v6</td><td>1</td><td>10000.00</td><td>10096.80</td><td><span class="pos">+0.97 %</span></td><td>✔</td></tr></tbody>
+  </table>
+
+  <h2>Aggregat (alle Läufe)</h2>
+  <table>
+    <thead><tr>
+      <th>Modell</th><th>Runs</th><th>Ø P&L %</th>
+      <th>Best %</th><th>Worst %</th><th>Ø Trades</th>
+    </tr></thead>
+    <tbody><tr><td>gemini-flash-latest</td><td>1</td><td><span class="pos">+0.97 %</span></td><td><span class="pos">+0.97 %</span></td><td><span class="pos">+0.97 %</span></td><td>1.0</td></tr></tbody>
+  </table>
+
+  <h2>Verlauf</h2>
+  <img src="pnl_history.png" alt="P&L history per model">
+</body>
+</html>
