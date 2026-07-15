@@ -1,0 +1,26 @@
+# Secrets
+.env
+sap_service_key.json
+.sap_service_key.json
+*.pem
+*.key
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Lokaler Simulator-Output (nicht ins Repo).
+# Benchmarks werden explizit erlaubt (siehe "!" unten).
+data/portfolio.csv
+data/portfolio.csv.bak
+data/trades.csv
+data/trades.csv.bak
+data/simulation_equity.csv
+data/simulation.png
+data/trace.txt
+
+# Benchmark-Ergebnisse SOLLEN commited werden.
+!data/runs/
+!data/runs/**
+!data/leaderboard.csv
