@@ -97,17 +97,32 @@ jobs:
             git push
           fi
 
+      # ------------------------------------------------------------------
+      # GitHub Pages Deployment (optional / best-effort)
+      # ------------------------------------------------------------------
+      # HINWEIS: Damit dieser Block funktioniert, muss Pages im Repo einmalig
+      # manuell aktiviert werden:
+      #   Settings -> Pages -> Build and deployment -> Source: "GitHub Actions"
+      # Der Parameter `enablement: true` reicht NICHT aus, weil das
+      # Standard-GITHUB_TOKEN nicht das Recht `administration: write` hat,
+      # das zum Anlegen einer Pages-Site nötig wäre.
+      #
+      # Solange Pages nicht aktiviert ist, überspringen wir die Steps
+      # bzw. lassen sie den Job nicht rot färben.
+
       - name: Setup Pages
+        id: pages_setup
         uses: actions/configure-pages@v5
-        with:
-          enablement: true    # Aktiviert Pages automatisch, falls es noch aus ist.
+        continue-on-error: true
 
       - name: Upload Pages artifact
+        if: steps.pages_setup.outcome == 'success'
         uses: actions/upload-pages-artifact@v3
         with:
           path: docs
 
       - name: Deploy to GitHub Pages
         id: deployment
+        if: steps.pages_setup.outcome == 'success'
         uses: actions/deploy-pages@v4
-        continue-on-error: true   # Falls Pages noch nicht bereit: kein harter Fail.
+        continue-on-error: true
